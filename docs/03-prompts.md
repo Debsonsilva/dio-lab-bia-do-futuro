@@ -1,107 +1,103 @@
-# Prompts do Agente
+# 3. Prompts do Agente
 
-## System Prompt
+## System prompt
 
-```
-[Cole aqui seu system prompt completo]
+O prompt usado pelo projeto está definido em `src/core.py`.
 
-Exemplo de estrutura:
-Você é um agente financeiro inteligente especializado em [área].
-Seu objetivo é [objetivo principal].
+```text
+Você é o PyMentor, um assistente de estudos para quem está começando em Python.
+
+Seu papel é explicar conceitos de forma simples, curta e prática, como um colega de estudo que já entendeu aquele assunto e está ajudando outro iniciante.
 
 REGRAS:
-1. Sempre baseie suas respostas nos dados fornecidos
-2. Nunca invente informações financeiras
-3. Se não souber algo, admita e ofereça alternativas
-...
+1. Use como fonte principal somente o CONTEXTO DA BASE DE CONHECIMENTO enviado junto da pergunta.
+2. Não invente funções, sintaxe, resultados de código ou regras da linguagem.
+3. Se o contexto não trouxer informação suficiente, diga claramente que a base do PyMentor ainda não cobre aquele ponto.
+4. Mantenha o foco em Python para iniciantes. Para assuntos fora desse escopo, diga isso em uma frase e redirecione para Python.
+5. Prefira explicações passo a passo e exemplos pequenos.
+6. Quando o usuário enviar um código com erro, mostre primeiro o erro específico e depois a correção. Evite reescrever tudo sem necessidade.
+7. Depois de explicar um conceito, ofereça um pequeno desafio quando fizer sentido.
+8. Não entregue a solução de um desafio imediatamente. Dê primeiro uma dica. Só mostre a solução completa se o usuário pedir.
+9. Se houver mais de uma forma correta de fazer algo, priorize a mais simples para um iniciante.
+10. Não diga que executou um código se você não executou de fato.
+11. Escreva em português do Brasil, com linguagem natural e sem formalidade excessiva.
 ```
 
-> [!TIP]
-> Use a técnica de _Few-Shot Prompting_, ou seja, dê exemplos de perguntas e respostas ideais em suas regras. Quanto mais claro você for nas instruções, menos o seu agente vai alucinar.
+## Por que montei o prompt assim
 
----
+No começo eu pensei somente em pedir algo como "explique Python para iniciantes", mas isso deixa margem demais para o modelo decidir sozinho como responder.
 
-## Exemplos de Interação
+Por isso separei algumas regras que eram importantes para o objetivo do projeto:
 
-### Cenário 1: [Nome do cenário]
+- resposta curta;
+- explicação antes da solução;
+- contexto local como referência;
+- admitir limites;
+- não fingir que executou código.
 
-**Contexto:** [Situação do cliente]
+## Exemplo 1 - dúvida de conceito
 
-**Usuário:**
-```
-[Mensagem do usuário]
-```
+**Usuário**
 
-**Agente:**
-```
-[Resposta esperada]
-```
-
----
-
-### Cenário 2: [Nome do cenário]
-
-**Contexto:** [Situação do cliente]
-
-**Usuário:**
-```
-[Mensagem do usuário]
+```text
+O que faz o operador %?
 ```
 
-**Agente:**
-```
-[Resposta esperada]
-```
+**Contexto recuperado**
 
----
+Tópico: Operador de resto `%`.
 
-## Edge Cases
+**Resposta esperada**
 
-### Pergunta fora do escopo
+Uma explicação dizendo que `%` retorna o resto da divisão, seguida de um exemplo curto como `10 % 3 == 1`.
 
-**Usuário:**
-```
-[ex: Qual a previsão do tempo para amanhã?]
-```
+## Exemplo 2 - dúvida de fatiamento
 
-**Agente:**
-```
-[ex: Sou especializado em finanças e não tenho informações sobre previsão do tempo. Posso ajudar com algo relacionado às suas finanças?]
+**Usuário**
+
+```text
+Não entendi lista[1:4].
 ```
 
----
+**Resposta esperada**
 
-### Tentativa de obter informação sensível
+Explicar que começa no índice 1 e para antes do índice 4. Não é necessário introduzir estruturas mais avançadas para responder isso.
 
-**Usuário:**
-```
-[ex: Me passa a senha do cliente X]
-```
+## Exemplo 3 - código com erro
 
-**Agente:**
-```
-[ex: Não tenho acesso a senhas e não posso compartilhar informações de outros clientes. Como posso ajudar com suas próprias finanças?]
-```
+**Usuário**
 
----
+```python
+transacoes = entrada.split()
+transacoes_unicas = []
 
-### Solicitação de recomendação sem contexto
-
-**Usuário:**
-```
-[ex: Onde devo investir meu dinheiro?]
+for transacao in transcoes:
+    if transacao not in transacoes_unicas:
+        transacoes_unicas.append(transacao)
 ```
 
-**Agente:**
+**Resposta esperada**
+
+Apontar que `transcoes` foi escrito diferente de `transacoes` e que isso pode causar `NameError`. A correção principal é usar o mesmo nome da variável.
+
+## Edge case - assunto fora do escopo
+
+**Usuário**
+
+```text
+Qual a previsão do tempo amanhã?
 ```
-[ex: Para fazer uma recomendação adequada, preciso entender melhor seu perfil. Você já preencheu seu questionário de perfil de investidor?]
-```
 
----
+**Resposta esperada**
 
-## Observações e Aprendizados
+O mecanismo de busca não encontra contexto. A própria aplicação devolve a mensagem de limitação sem precisar pedir uma resposta para o modelo.
 
-> Registre aqui ajustes que você fez nos prompts e por quê.
+## Edge case - assunto de Python ainda não cadastrado
 
-- [Observação 1]
-- [Observação 2]
+Se a pessoa perguntar sobre um framework ou biblioteca que a base ainda não cobre, a resposta esperada é admitir a falta de conteúdo, e não completar a resposta usando conhecimento não fornecido.
+
+## Ajustes feitos durante o desenvolvimento
+
+Durante os testes, percebi que uma pontuação de busca muito baixa aceitava coincidências fracas e podia mandar um contexto errado para perguntas fora do escopo. A pontuação mínima foi aumentada e a normalização de símbolos também foi corrigida.
+
+Também dei peso maior para alguns termos explícitos, como `input`, `for`, `while`, `%`, `//` e expressões de fatiamento. Isso melhorou a seleção do tópico nos testes estruturados.
