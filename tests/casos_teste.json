@@ -1,0 +1,22 @@
+[
+  {"pergunta": "O que é uma variável em Python?", "esperado": "variaveis"},
+  {"pergunta": "Qual a diferença entre int, float e str?", "esperado": "tipos_dados"},
+  {"pergunta": "Por que input sempre vem como texto?", "esperado": "input"},
+  {"pergunta": "Como uso f-string no print?", "esperado": "print_fstring"},
+  {"pergunta": "Para que serve o operador %?", "esperado": "modulo"},
+  {"pergunta": "Quanto dá 10 // 3 e por quê?", "esperado": "divisao_inteira"},
+  {"pergunta": "Como comparar se idade é maior ou igual a 18?", "esperado": "comparacao"},
+  {"pergunta": "Me explica if elif else", "esperado": "condicionais"},
+  {"pergunta": "Como remover espaços do começo com lstrip?", "esperado": "metodos_string"},
+  {"pergunta": "Como pego o primeiro elemento de uma lista?", "esperado": "listas"},
+  {"pergunta": "Qual diferença entre append remove e pop?", "esperado": "metodos_lista"},
+  {"pergunta": "Não entendi lista[1:4]", "esperado": "fatiamento"},
+  {"pergunta": "Como funciona texto[::2]?", "esperado": "fatiamento"},
+  {"pergunta": "Como percorrer uma lista com for?", "esperado": "for"},
+  {"pergunta": "Quando usar while?", "esperado": "while"},
+  {"pergunta": "Como tirar itens duplicados sem perder a ordem?", "esperado": "duplicados"},
+  {"pergunta": "O que é um dicionário em Python?", "esperado": "dicionarios"},
+  {"pergunta": "Como criar uma função com def?", "esperado": "funcoes"},
+  {"pergunta": "Apareceu NameError, o que significa?", "esperado": "erros"},
+  {"pergunta": "Como faço soma e multiplicação em Python?", "esperado": "operadores_aritmeticos"}
+]
