@@ -1,44 +1,75 @@
-# Pitch (3 minutos)
+# 5. Pitch - roteiro de até 3 minutos
 
-> [!TIP]
-> Você pode usar alguns slides pra apoiar no seu Pitch e mostrar sua solução na prática.
- 
-## Roteiro Sugerido
+## 1. O problema
 
-### 1. O Problema (30 seg)
-> Qual dor do cliente você resolve?
+Eu escolhi trabalhar com uma situação que acontece comigo estudando Python. Muitas vezes a teoria parece simples durante a aula, mas na hora de fazer um exercício aparece uma dúvida pequena e ela bloqueia todo o raciocínio.
 
-[Sua descrição aqui]
+Pesquisar na internet ajuda, mas também é comum cair em respostas maiores e mais avançadas do que o assunto que eu estou tentando aprender naquele momento.
 
-### 2. A Solução (1 min)
-> Como seu agente resolve esse problema?
+## 2. A solução
 
-[Sua descrição aqui]
+O projeto que eu criei se chama **PyMentor**.
 
-### 3. Demonstração (1 min)
-> Mostre o agente funcionando (pode ser gravação de tela)
+Ele é um assistente voltado para Python iniciante. A diferença é que ele não manda qualquer pergunta direto para uma IA. Primeiro ele procura o assunto em uma base de conhecimento que eu organizei em JSON.
 
-[Descreva o que será mostrado]
+Se encontra conteúdo relacionado, monta um contexto com explicação, exemplo, erros comuns e, quando existe, um exercício. Só depois esse contexto é enviado para um modelo local pelo Ollama.
 
-### 4. Diferencial e Impacto (30 seg)
-> Por que essa solução é inovadora e qual é o impacto dela na sociedade?
+No prompt eu defini que o agente deve explicar de forma simples, evitar inventar informação e dar uma dica antes de entregar a solução de um desafio.
 
-[Sua descrição aqui]
+Se a pergunta estiver fora do que a base conhece, ele admite a limitação.
 
----
+## 3. Demonstração
 
-## Checklist do Pitch
+Na gravação eu mostraria três situações.
 
-- [ ] Duração máxima de 3 minutos
-- [ ] Problema claramente definido
-- [ ] Solução demonstrada na prática
-- [ ] Diferencial explicado
-- [ ] Áudio e vídeo com boa qualidade
+Primeiro:
 
----
+```text
+Para que serve o % em Python?
+```
 
-## Link do Vídeo
+O PyMentor deve recuperar o assunto de resto da divisão e explicar com um exemplo simples.
 
-> Cole aqui o link do seu pitch (YouTube, Loom, Google Drive, etc.)
+Depois:
 
-[Link do vídeo]
+```text
+Não entendi texto[::2].
+```
+
+Nesse caso ele recupera fatiamento e explica a ideia do passo.
+
+Por último eu perguntaria:
+
+```text
+Qual a previsão do tempo amanhã?
+```
+
+A aplicação não encontra contexto suficiente e informa que esse assunto está fora da base.
+
+## 4. Diferencial e aprendizado
+
+O principal ponto do projeto para mim foi entender que um assistente não é somente colocar uma pergunta em uma LLM.
+
+Eu precisei pensar em como organizar conhecimento, selecionar contexto, criar regras no prompt e testar quando o agente deveria ou não responder.
+
+Também criei testes automáticos para a busca. Hoje são 20 perguntas de Python e 5 perguntas fora do escopo, com os 25 casos passando na versão atual.
+
+Como evolução, eu adicionaria mais assuntos e depois compararia essa busca simples com uma busca semântica usando embeddings.
+
+## Checklist antes de gravar
+
+- [ ] Abrir o PyMentor funcionando no Streamlit
+- [ ] Mostrar uma pergunta sobre `%`
+- [ ] Mostrar uma pergunta sobre fatiamento
+- [ ] Mostrar uma pergunta fora do escopo
+- [ ] Mostrar rapidamente a pasta `data/`
+- [ ] Mostrar o resultado de `python src/avaliar.py`
+- [ ] Manter o vídeo abaixo de 3 minutos
+
+## Link do vídeo
+
+Adicionar aqui depois de gravar:
+
+```text
+LINK_DO_VIDEO
+```

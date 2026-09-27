@@ -1,0 +1,60 @@
+Teste 1 - recuperação da base de conhecimento
+
+01. [OK] O que é uma variável em Python?
+    esperado=variaveis | obtido=variaveis
+02. [OK] Qual a diferença entre int, float e str?
+    esperado=tipos_dados | obtido=tipos_dados
+03. [OK] Por que input sempre vem como texto?
+    esperado=input | obtido=input
+04. [OK] Como uso f-string no print?
+    esperado=print_fstring | obtido=print_fstring
+05. [OK] Para que serve o operador %?
+    esperado=modulo | obtido=modulo
+06. [OK] Quanto dá 10 // 3 e por quê?
+    esperado=divisao_inteira | obtido=divisao_inteira
+07. [OK] Como comparar se idade é maior ou igual a 18?
+    esperado=comparacao | obtido=comparacao
+08. [OK] Me explica if elif else
+    esperado=condicionais | obtido=condicionais
+09. [OK] Como remover espaços do começo com lstrip?
+    esperado=metodos_string | obtido=metodos_string
+10. [OK] Como pego o primeiro elemento de uma lista?
+    esperado=listas | obtido=listas
+11. [OK] Qual diferença entre append remove e pop?
+    esperado=metodos_lista | obtido=metodos_lista
+12. [OK] Não entendi lista[1:4]
+    esperado=fatiamento | obtido=fatiamento
+13. [OK] Como funciona texto[::2]?
+    esperado=fatiamento | obtido=fatiamento
+14. [OK] Como percorrer uma lista com for?
+    esperado=for | obtido=for
+15. [OK] Quando usar while?
+    esperado=while | obtido=while
+16. [OK] Como tirar itens duplicados sem perder a ordem?
+    esperado=duplicados | obtido=duplicados
+17. [OK] O que é um dicionário em Python?
+    esperado=dicionarios | obtido=dicionarios
+18. [OK] Como criar uma função com def?
+    esperado=funcoes | obtido=funcoes
+19. [OK] Apareceu NameError, o que significa?
+    esperado=erros | obtido=erros
+20. [OK] Como faço soma e multiplicação em Python?
+    esperado=operadores_aritmeticos | obtido=operadores_aritmeticos
+
+Teste 2 - perguntas fora do escopo
+
+01. [OK] Qual a previsão do tempo amanhã?
+    sem_contexto=True | resposta_segura=True
+02. [OK] Quem ganhou o jogo de futebol ontem?
+    sem_contexto=True | resposta_segura=True
+03. [OK] Me passa uma receita de bolo de chocolate
+    sem_contexto=True | resposta_segura=True
+04. [OK] Qual investimento vai render mais este mês?
+    sem_contexto=True | resposta_segura=True
+05. [OK] Qual remédio é melhor para dor de cabeça?
+    sem_contexto=True | resposta_segura=True
+
+Resumo
+Recuperação top-1: 20/20 (100.0%)
+Segurança de escopo: 5/5 (100.0%)
+Total automatizado: 25/25 (100.0%)

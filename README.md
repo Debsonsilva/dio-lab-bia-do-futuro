@@ -1,149 +1,190 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
+# 🐍 PyMentor
 
-## Contexto
+Assistente virtual para ajudar quem está começando a estudar Python.
 
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
+Eu escolhi esse tema porque foi uma dificuldade que apareceu no meu próprio estudo. Em alguns assuntos eu entendia a explicação da aula, mas travava quando precisava aplicar sozinho em um exercício. A ideia do PyMentor é ficar no meio desse caminho: explicar com palavras mais simples, mostrar um exemplo curto e depois propor um desafio para a pessoa tentar.
 
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
+Este projeto foi desenvolvido para o Lab **Construa Seu Assistente Virtual Com Inteligência Artificial**, da DIO.
 
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+## O que o PyMentor faz
 
----
+O assistente foi pensado para dúvidas de nível iniciante. A base atual cobre assuntos como:
 
-## O Que Você Deve Entregar
+- variáveis e tipos de dados;
+- `input()` e `print()`;
+- f-strings;
+- operadores como `%` e `//`;
+- comparações e `if / elif / else`;
+- strings e métodos de texto;
+- listas e métodos de lista;
+- fatiamento;
+- `for` e `while`;
+- remoção de itens duplicados;
+- dicionários;
+- funções;
+- leitura de erros básicos.
 
-### 1. Documentação do Agente
+A lógica principal é simples: antes de responder, o programa procura na base local quais assuntos têm relação com a pergunta. Só esse contexto é enviado para o modelo. Se não encontrar informação suficiente, o PyMentor informa a limitação em vez de inventar uma resposta.
 
-Defina **o que** seu agente faz e **como** ele funciona:
+## Como funciona
 
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
-
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
-
----
-
-### 2. Base de Conhecimento
-
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
-
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
-
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
-
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
-
----
-
-### 3. Prompts do Agente
-
-Documente os prompts que definem o comportamento do seu agente:
-
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
-
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
-
----
-
-### 4. Aplicação Funcional
-
-Desenvolva um **protótipo funcional** do seu agente:
-
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
-
-📁 **Pasta:** [`src/`](./src/)
-
----
-
-### 5. Avaliação e Métricas
-
-Descreva como você avalia a qualidade do seu agente:
-
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
-
----
-
-### 6. Pitch
-
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
-
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
-
----
-
-## Ferramentas Sugeridas
-
-Todas as ferramentas abaixo possuem versões gratuitas:
-
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
-
----
-
-## Estrutura do Repositório
-
-```
-📁 lab-agente-financeiro/
-│
-├── 📄 README.md
-│
-├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
-│
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
-│
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
-│
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
-│
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
+```mermaid
+flowchart LR
+    A[Usuário] --> B[Streamlit]
+    B --> C[Busca na base local]
+    C --> D{Encontrou contexto?}
+    D -- Não --> E[Resposta de limitação]
+    D -- Sim --> F[Prompt + contexto]
+    F --> G[Ollama]
+    G --> H[Resposta didática]
 ```
 
----
+### Tecnologias usadas
 
-## Dicas Finais
+- Python
+- Streamlit
+- Ollama
+- JSON
+- Requests
 
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
+Não usei banco de dados nem framework de agentes. Para esta primeira versão preferi deixar o fluxo visível e fácil de entender.
+
+## Estrutura
+
+```text
+pymentor/
+├── data/
+│   ├── conceitos_python.json
+│   ├── erros_comuns.json
+│   └── exercicios.json
+├── docs/
+│   ├── 01-documentacao-agente.md
+│   ├── 02-base-conhecimento.md
+│   ├── 03-prompts.md
+│   ├── 04-metricas.md
+│   └── 05-pitch.md
+├── src/
+│   ├── app.py
+│   ├── avaliar.py
+│   └── core.py
+├── tests/
+│   ├── casos_seguranca.json
+│   ├── casos_teste.json
+│   └── resultado_avaliacao.txt
+├── requirements.txt
+└── README.md
+```
+
+## Como executar
+
+### 1. Criar um ambiente virtual
+
+No Windows:
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+### 2. Instalar as dependências
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Instalar e preparar o Ollama
+
+Depois de instalar o Ollama, baixe o modelo usado por padrão:
+
+```bash
+ollama pull llama3.2:3b
+```
+
+Se o Ollama não estiver rodando, abra o aplicativo ou use:
+
+```bash
+ollama serve
+```
+
+### 4. Iniciar o PyMentor
+
+```bash
+streamlit run src/app.py
+```
+
+O navegador deve abrir a interface do chatbot.
+
+> Se o Ollama não estiver disponível, a aplicação continua abrindo em modo de demonstração e responde diretamente com os textos da base local. Esse modo serve para testar a interface e a recuperação de conteúdo, mas não usa geração por IA.
+
+## Exemplo de uso
+
+**Pergunta**
+
+```text
+Não entendi para que serve o % em Python.
+```
+
+**Comportamento esperado**
+
+O PyMentor procura o tópico sobre resto da divisão, envia esse conteúdo como contexto para o modelo e pede uma explicação voltada para iniciantes. Depois pode sugerir um exercício simples usando números pares e ímpares.
+
+Outro exemplo:
+
+```text
+Como está o tempo hoje?
+```
+
+Nesse caso ele não encontra um tópico válido na base e deve responder que esse assunto está fora do que o projeto cobre.
+
+## Testes
+
+Criei um teste automático para validar duas partes que considero importantes nesta versão:
+
+1. se a busca encontra o tópico correto para uma dúvida de Python;
+2. se perguntas claramente fora do escopo ficam sem contexto e recebem a resposta de limitação.
+
+Para executar:
+
+```bash
+python src/avaliar.py
+```
+
+Resultado obtido com os casos atuais:
+
+```text
+Recuperação top-1: 20/20 (100.0%)
+Segurança de escopo: 5/5 (100.0%)
+Total automatizado: 25/25 (100.0%)
+```
+
+Esse resultado mede a parte determinística do projeto, não significa que toda resposta gerada por um LLM será perfeita. A avaliação das respostas em linguagem natural continua precisando de teste manual.
+
+## Etapas do desafio
+
+- [x] Documentação do agente
+- [x] Base de conhecimento
+- [x] Prompts
+- [x] Aplicação funcional
+- [x] Avaliação e métricas
+- [x] Pitch
+
+A documentação de cada etapa está na pasta [`docs/`](docs/).
+
+## Próximas melhorias
+
+Algumas coisas que eu gostaria de testar depois:
+
+- aumentar a quantidade de assuntos na base;
+- permitir que a pessoa escolha o nível da explicação;
+- salvar progresso dos desafios;
+- criar uma busca semântica usando embeddings;
+- adicionar testes manuais com outras pessoas iniciantes em Python.
+
+## Referências do desafio
+
+- Repositório base da DIO: https://github.com/digitalinnovationone/dio-lab-bia-do-futuro
+- Repositório de exemplo (Edu): https://github.com/falvojr/dio-lab-bia-do-futuro
+
+## Autor
+
+**Debson Weverton**

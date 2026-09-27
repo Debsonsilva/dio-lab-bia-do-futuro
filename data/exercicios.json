@@ -1,0 +1,58 @@
+[
+  {
+    "id": "ex_modulo_01",
+    "conceito_id": "modulo",
+    "nivel": "iniciante",
+    "enunciado": "Leia um número inteiro e mostre se ele é par ou ímpar usando o operador %.",
+    "dica": "Um número par deixa resto 0 quando é dividido por 2.",
+    "solucao": "numero = int(input('Número: '))\nif numero % 2 == 0:\n    print('Par')\nelse:\n    print('Ímpar')"
+  },
+  {
+    "id": "ex_condicional_01",
+    "conceito_id": "condicionais",
+    "nivel": "iniciante",
+    "enunciado": "Leia uma nota de 0 a 10. Mostre 'Aprovado' para nota maior ou igual a 7, 'Recuperação' entre 5 e 6.9 e 'Reprovado' abaixo de 5.",
+    "dica": "Comece testando a maior faixa com if, depois use elif e finalize com else.",
+    "solucao": "nota = float(input('Nota: '))\nif nota >= 7:\n    print('Aprovado')\nelif nota >= 5:\n    print('Recuperação')\nelse:\n    print('Reprovado')"
+  },
+  {
+    "id": "ex_lista_01",
+    "conceito_id": "listas",
+    "nivel": "iniciante",
+    "enunciado": "Crie uma lista com três linguagens de programação e mostre apenas a segunda linguagem.",
+    "dica": "Lembre que o primeiro índice é 0.",
+    "solucao": "linguagens = ['Python', 'SQL', 'Java']\nprint(linguagens[1])"
+  },
+  {
+    "id": "ex_fatiamento_01",
+    "conceito_id": "fatiamento",
+    "nivel": "iniciante",
+    "enunciado": "Com a string 'PYTHON', mostre os caracteres das posições 1 até 3 usando fatiamento.",
+    "dica": "O índice final do fatiamento não entra no resultado.",
+    "solucao": "texto = 'PYTHON'\nprint(texto[1:4])"
+  },
+  {
+    "id": "ex_duplicados_01",
+    "conceito_id": "duplicados",
+    "nivel": "iniciante",
+    "enunciado": "Receba uma linha com códigos separados por espaço e mostre cada código apenas uma vez, preservando a ordem da primeira ocorrência.",
+    "dica": "Use split(), uma lista vazia e teste 'if item not in lista'.",
+    "solucao": "entrada = input().split()\nunicos = []\nfor item in entrada:\n    if item not in unicos:\n        unicos.append(item)\nprint(' '.join(unicos))"
+  },
+  {
+    "id": "ex_for_01",
+    "conceito_id": "for",
+    "nivel": "iniciante",
+    "enunciado": "Percorra a lista [10, 20, 30] e mostre cada número em uma linha.",
+    "dica": "Use 'for numero in numeros'.",
+    "solucao": "numeros = [10, 20, 30]\nfor numero in numeros:\n    print(numero)"
+  },
+  {
+    "id": "ex_input_01",
+    "conceito_id": "input",
+    "nivel": "iniciante",
+    "enunciado": "Peça nome e idade ao usuário e depois mostre uma frase usando f-string.",
+    "dica": "A idade pode ser convertida com int(input(...)).",
+    "solucao": "nome = input('Nome: ')\nidade = int(input('Idade: '))\nprint(f'{nome} tem {idade} anos.')"
+  }
+]

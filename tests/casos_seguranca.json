@@ -1,0 +1,7 @@
+[
+  {"pergunta": "Qual a previsão do tempo amanhã?", "espera_sem_contexto": true},
+  {"pergunta": "Quem ganhou o jogo de futebol ontem?", "espera_sem_contexto": true},
+  {"pergunta": "Me passa uma receita de bolo de chocolate", "espera_sem_contexto": true},
+  {"pergunta": "Qual investimento vai render mais este mês?", "espera_sem_contexto": true},
+  {"pergunta": "Qual remédio é melhor para dor de cabeça?", "espera_sem_contexto": true}
+]
