@@ -1,0 +1,182 @@
+[
+  {
+    "id": "variaveis",
+    "titulo": "Variáveis",
+    "aliases": ["variavel", "variáveis", "variável"],
+    "palavras_chave": ["guardar valor", "atribuição", "nome", "idade", "saldo"],
+    "resumo": "Variáveis servem para guardar valores que podem ser usados depois no programa.",
+    "explicacao": "Em Python, uma variável nasce quando você atribui um valor usando o sinal =. O nome fica do lado esquerdo e o valor do lado direito.",
+    "exemplo": "nome = 'Debson'\nidade = 26\nprint(nome, idade)"
+  },
+  {
+    "id": "tipos_dados",
+    "titulo": "Tipos de dados",
+    "aliases": ["tipos", "int", "float", "str", "bool"],
+    "palavras_chave": ["inteiro", "decimal", "texto", "booleano", "type"],
+    "resumo": "Os tipos mais comuns no começo são int, float, str e bool.",
+    "explicacao": "int representa números inteiros, float números com casas decimais, str textos e bool valores True ou False.",
+    "exemplo": "idade = 26          # int\naltura = 1.80       # float\nnome = 'Debson'     # str\nativo = True        # bool"
+  },
+  {
+    "id": "input",
+    "titulo": "Entrada de dados com input()",
+    "aliases": ["input", "entrada de dados", "ler dados"],
+    "palavras_chave": ["usuário digita", "teclado", "converter", "int input", "float input"],
+    "resumo": "input() permite receber um valor digitado pela pessoa que está usando o programa.",
+    "explicacao": "O resultado de input() chega como texto. Quando o programa precisa fazer contas, normalmente é necessário converter para int ou float.",
+    "exemplo": "idade = int(input('Digite sua idade: '))\nprint(idade)"
+  },
+  {
+    "id": "print_fstring",
+    "titulo": "print() e f-string",
+    "aliases": ["print", "f string", "f-string", "formatar texto"],
+    "palavras_chave": ["mostrar na tela", "chaves", "texto com variavel", "formatação"],
+    "resumo": "print() mostra informações na tela e f-strings facilitam misturar texto com valores de variáveis.",
+    "explicacao": "Uma f-string começa com a letra f antes das aspas. Dentro do texto, as variáveis ficam entre chaves.",
+    "exemplo": "nome = 'Debson'\nidade = 26\nprint(f'Meu nome é {nome} e tenho {idade} anos.')"
+  },
+  {
+    "id": "operadores_aritmeticos",
+    "titulo": "Operadores aritméticos",
+    "aliases": ["operadores", "soma", "subtração", "multiplicação", "divisão"],
+    "palavras_chave": ["+", "-", "*", "/", "conta", "calculo"],
+    "resumo": "Python usa operadores para fazer contas, como +, -, *, /, //, % e **.",
+    "explicacao": "+ soma, - subtrai, * multiplica, / divide, // faz divisão inteira, % retorna o resto e ** calcula potência.",
+    "exemplo": "a = 10\nb = 3\nprint(a + b)\nprint(a * b)\nprint(a / b)"
+  },
+  {
+    "id": "modulo",
+    "titulo": "Operador de resto %",
+    "aliases": ["modulo", "módulo", "porcentagem", "resto da divisão", "%"],
+    "palavras_chave": ["resto", "divisão", "par ou impar", "saldo %="],
+    "resumo": "O operador % devolve o resto de uma divisão.",
+    "explicacao": "Em 10 % 3, o resultado é 1 porque 3 cabe três vezes em 10 e sobra 1. Ele também é muito usado para descobrir se um número é par ou ímpar.",
+    "exemplo": "saldo = 102\nsaldo %= 4\nprint(saldo)  # 2"
+  },
+  {
+    "id": "divisao_inteira",
+    "titulo": "Divisão inteira //",
+    "aliases": ["divisão inteira", "divisao inteira", "//"],
+    "palavras_chave": ["quociente", "sem casas decimais", "resultado inteiro"],
+    "resumo": "// retorna a parte inteira do resultado da divisão.",
+    "explicacao": "Ao usar //, Python descarta a parte fracionária da divisão. Por exemplo, 10 // 3 resulta em 3.",
+    "exemplo": "print(10 // 3)  # 3"
+  },
+  {
+    "id": "comparacao",
+    "titulo": "Operadores de comparação",
+    "aliases": ["comparação", "comparacao", "maior", "menor", "igual"],
+    "palavras_chave": [">", "<", "==", "!=", ">=", "<=", "comparar valores"],
+    "resumo": "Operadores de comparação verificam relações entre valores e retornam True ou False.",
+    "explicacao": "Use == para comparar igualdade, != para diferença, > e < para maior e menor, e >= ou <= para incluir igualdade.",
+    "exemplo": "idade = 26\nprint(idade >= 18)  # True"
+  },
+  {
+    "id": "condicionais",
+    "titulo": "if, elif e else",
+    "aliases": ["if", "elif", "else", "condicional", "condição"],
+    "palavras_chave": ["se", "senão", "decisão", "bloco", "indentação"],
+    "resumo": "if, elif e else permitem que o programa tome decisões.",
+    "explicacao": "O if testa a primeira condição. elif permite testar outra condição quando a anterior é falsa. else cobre o caso restante.",
+    "exemplo": "nota = 7\nif nota >= 7:\n    print('Aprovado')\nelif nota >= 5:\n    print('Recuperação')\nelse:\n    print('Reprovado')"
+  },
+  {
+    "id": "strings",
+    "titulo": "Strings",
+    "aliases": ["string", "str", "texto"],
+    "palavras_chave": ["caracteres", "aspas", "frase", "índice", "texto"],
+    "resumo": "String é o tipo usado para representar textos em Python.",
+    "explicacao": "Strings são sequências de caracteres. Por isso, é possível acessar posições, fatiar partes e aplicar métodos de texto.",
+    "exemplo": "linguagem = 'Python'\nprint(linguagem[0])  # P"
+  },
+  {
+    "id": "metodos_string",
+    "titulo": "Métodos de string",
+    "aliases": ["strip", "lstrip", "rstrip", "upper", "lower", "split", "join"],
+    "palavras_chave": ["remover espaços", "maiúscula", "minúscula", "separar texto", "juntar texto"],
+    "resumo": "Métodos de string ajudam a limpar, transformar, separar e juntar textos.",
+    "explicacao": "strip() remove espaços nas pontas, lstrip() só à esquerda, rstrip() à direita, upper()/lower() mudam letras, split() separa e join() junta elementos de texto.",
+    "exemplo": "texto = '  Python  '\nprint(texto.strip())\nprint('a,b,c'.split(','))"
+  },
+  {
+    "id": "listas",
+    "titulo": "Listas",
+    "aliases": ["lista", "list", "vetor"],
+    "palavras_chave": ["colchetes", "índice", "elementos", "coleção", "array"],
+    "resumo": "Listas guardam vários valores em uma única variável e mantêm uma ordem.",
+    "explicacao": "Uma lista usa colchetes. Os índices começam em 0, então o primeiro elemento fica na posição 0.",
+    "exemplo": "linguagens = ['Python', 'SQL', 'Java']\nprint(linguagens[0])  # Python"
+  },
+  {
+    "id": "metodos_lista",
+    "titulo": "Métodos de lista",
+    "aliases": ["append", "remove", "pop", "adicionar lista", "remover lista"],
+    "palavras_chave": ["inserir elemento", "apagar elemento", "append", "remove", "pop"],
+    "resumo": "Listas podem ser alteradas com métodos como append(), remove() e pop().",
+    "explicacao": "append() adiciona um item ao final. remove() apaga a primeira ocorrência de um valor. pop() remove por índice e também devolve o item removido.",
+    "exemplo": "nomes = ['Ana', 'Bia']\nnomes.append('Caio')\nnomes.remove('Bia')\nprint(nomes)"
+  },
+  {
+    "id": "fatiamento",
+    "titulo": "Fatiamento de listas e strings",
+    "aliases": ["fatiamento", "slice", "slicing", "dois pontos"],
+    "palavras_chave": ["inicio fim passo", "[::]", "[1:4]", "[::2]", "intervalo lista"],
+    "resumo": "O fatiamento permite pegar uma parte de uma lista ou string usando [início:fim:passo].",
+    "explicacao": "O início é incluído e o fim não é incluído. Se uma parte for omitida, Python usa um valor padrão. O terceiro valor define o passo.",
+    "exemplo": "texto = 'PYTHON'\nprint(texto[1:4])  # YTH\nprint(texto[::2]) # PTO"
+  },
+  {
+    "id": "for",
+    "titulo": "Laço for",
+    "aliases": ["for", "loop for", "laço for", "repetição"],
+    "palavras_chave": ["percorrer lista", "repetir", "iterar", "range"],
+    "resumo": "for repete um bloco para cada item de uma sequência.",
+    "explicacao": "O for é útil quando você quer percorrer itens de uma lista, string ou range sem controlar manualmente o índice.",
+    "exemplo": "nomes = ['Ana', 'Bia', 'Caio']\nfor nome in nomes:\n    print(nome)"
+  },
+  {
+    "id": "while",
+    "titulo": "Laço while",
+    "aliases": ["while", "loop while", "laço while"],
+    "palavras_chave": ["enquanto", "repetir condição", "contador", "loop infinito"],
+    "resumo": "while repete um bloco enquanto uma condição continuar verdadeira.",
+    "explicacao": "É importante alterar algo dentro do laço para que a condição possa se tornar falsa e o programa não entre em loop infinito.",
+    "exemplo": "contador = 0\nwhile contador < 3:\n    print(contador)\n    contador += 1"
+  },
+  {
+    "id": "duplicados",
+    "titulo": "Remoção de duplicados mantendo a ordem",
+    "aliases": ["duplicados", "repetidos", "sem duplicatas", "transações únicas"],
+    "palavras_chave": ["not in", "lista única", "manter ordem", "itens repetidos"],
+    "resumo": "Para remover duplicados mantendo a primeira ocorrência, dá para percorrer a lista e adicionar apenas itens ainda não vistos.",
+    "explicacao": "Um set remove duplicados, mas não é a melhor escolha quando o exercício exige preservar explicitamente a ordem da primeira ocorrência. Uma lista auxiliar deixa a lógica fácil de entender.",
+    "exemplo": "entrada = ['A', 'B', 'A', 'C']\nunicos = []\nfor item in entrada:\n    if item not in unicos:\n        unicos.append(item)\nprint(unicos)"
+  },
+  {
+    "id": "dicionarios",
+    "titulo": "Dicionários",
+    "aliases": ["dicionário", "dicionario", "dict", "chave valor"],
+    "palavras_chave": ["chave", "valor", "json", "pares"],
+    "resumo": "Dicionários armazenam dados em pares de chave e valor.",
+    "explicacao": "Em vez de acessar um valor por posição, normalmente você usa uma chave. Eles são muito comuns ao trabalhar com JSON.",
+    "exemplo": "aluno = {'nome': 'Debson', 'nivel': 'iniciante'}\nprint(aluno['nome'])"
+  },
+  {
+    "id": "funcoes",
+    "titulo": "Funções",
+    "aliases": ["função", "funcao", "def", "return"],
+    "palavras_chave": ["reutilizar código", "parâmetro", "retorno", "definir função"],
+    "resumo": "Funções agrupam uma tarefa em um bloco que pode ser reutilizado.",
+    "explicacao": "Uma função é criada com def. Ela pode receber parâmetros e pode usar return para devolver um resultado.",
+    "exemplo": "def somar(a, b):\n    return a + b\n\nprint(somar(2, 3))"
+  },
+  {
+    "id": "erros",
+    "titulo": "Leitura de erros básicos",
+    "aliases": ["erro", "traceback", "syntaxerror", "nameerror", "typeerror", "indentationerror"],
+    "palavras_chave": ["bug", "mensagem de erro", "linha do erro", "depurar", "debug"],
+    "resumo": "As mensagens de erro mostram o tipo do problema e normalmente indicam a linha em que ele apareceu.",
+    "explicacao": "SyntaxError costuma apontar erro de escrita da linguagem, NameError nome inexistente, TypeError operação entre tipos incompatíveis e IndentationError problema de indentação.",
+    "exemplo": "# Se aparecer NameError, confira se o nome da variável foi escrito igual em todos os lugares."
+  }
+]
