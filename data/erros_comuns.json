@@ -1,0 +1,42 @@
+[
+  {
+    "conceito_id": "condicionais",
+    "erro": "Esquecer os dois pontos depois de if, elif ou else.",
+    "correcao": "Finalize a linha da condição com ':' e indente o bloco seguinte."
+  },
+  {
+    "conceito_id": "condicionais",
+    "erro": "Usar = quando a intenção é comparar dois valores.",
+    "correcao": "Use == para comparação. O sinal = é usado para atribuição."
+  },
+  {
+    "conceito_id": "input",
+    "erro": "Tentar somar diretamente um número com o resultado de input().",
+    "correcao": "Converta o valor com int() ou float() antes da conta."
+  },
+  {
+    "conceito_id": "listas",
+    "erro": "Tentar acessar o primeiro item com índice 1.",
+    "correcao": "Em Python, o primeiro índice é 0."
+  },
+  {
+    "conceito_id": "fatiamento",
+    "erro": "Achar que o índice final entra no resultado.",
+    "correcao": "No fatiamento, o início entra e o fim fica de fora."
+  },
+  {
+    "conceito_id": "duplicados",
+    "erro": "Digitar o nome de uma variável de forma diferente em outra linha, por exemplo transacoes e transcoes.",
+    "correcao": "Use exatamente o mesmo nome da variável em todo o código."
+  },
+  {
+    "conceito_id": "for",
+    "erro": "Esquecer a indentação do código que deve ser repetido.",
+    "correcao": "O bloco dentro do for precisa ficar indentado."
+  },
+  {
+    "conceito_id": "while",
+    "erro": "Criar um loop infinito porque a variável da condição nunca muda.",
+    "correcao": "Atualize o contador ou outro valor que faça a condição se tornar falsa."
+  }
+]
